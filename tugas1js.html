@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data pegawai</title>
+</head>
+<body>
+    <h1 align="center">Data pegawai</h1>
+    <table border="1" align="center" cellpadding="20" cellspacing="0" width="65%">
+        <thead>
+            <tr bgcolor="pink">
+                <th>Nama pegawai</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+                <th>Gaji pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>BPJS</th>
+                <th>Tunjangan keluarga</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>
+                    <script>
+                        var nama_pegawai = "Ridwan"
+                        var jabatan = "Manager"
+                        var status = "Menikah"
+                        var Gaji
+
+                        if (jabatan == "Manager")
+                            Gaji = 15000000;
+                        else if (jabatan == "Asisten Manager")
+                            Gaji = 10000000;
+                        else if (jabatan == "Staff")
+                            Gaji = 5000000;
+                        else Gaji = 0
+
+                        let tunjab = (Gaji * 0.15)
+                        let bpjs = (Gaji * 0.10)
+                        
+                        //ternary
+                        let tunkel = (status == 'Menikah') ? 0.20 * Gaji : 0;
+                    
+                        let total_gaji = (Gaji + tunjab + bpjs + tunkel)
+
+                        document.write( nama_pegawai +
+                        "<td>" + jabatan +
+                        "<td>" + status +
+                        "<td>" + Gaji +
+                        "<td>" + tunjab +
+                        "<td>" + bpjs +
+                        "<td>" + tunkel)
+
+                    </script>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" align="center">
+                    <script>
+                        document.write("Total Gaji : " + total_gaji)
+                    </script>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    
+</body>
+</html>
