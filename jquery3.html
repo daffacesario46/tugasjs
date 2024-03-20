@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handler</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body> 
+    <h2>Letakkan Kursor ke masing masing kotak untuk melihat gambar</h2>
+    <h2>Jangan lupa di klik dulu ya gambarnya </h2>
+    <div id="div1">
+        Hewan bebek
+        <audio id="bebek" src="suara/duck-quack-112941.mp3"></audio>
+    </div>
+    <div id="div2">
+        Hewan Kucing
+        <audio id="monyet" src="suara/monkey-128368.mp3"></audio>
+    </div>
+    <div id="div3">
+        Hewan Ayam
+        <audio id="gorila" src="suara/dinosaur-2-86565.mp3"></audio>
+    </div>
+    
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("#div1").mouseover(function(){
+                $("#bebek")[0].play();
+                $(this).css({
+                    background: "url('https://asset-2.tstatic.net/kaltim/foto/bank/images/Mathias-AppelFlickr-Panda-Merah.jpg')"
+                    
+                });
+            });
+            $("#div1").mouseout(function(){
+                $("#bebek")[0].pause();
+                $(this).css({
+                    background: "green"
+                });
+            });
+            $("#div2").mouseover(function(){
+                $("#monyet")[0].play();
+                $(this).css({
+                    background: "url('https://img.okezone.com/content/2021/08/09/406/2453034/monyet-pun-terdampak-ppkm-stok-makanan-tiris-bikin-miris-zxexD7AuNw.JPG')"
+                    
+                });
+            });
+            $("#div2").mouseout(function(){
+                $("#monyet")[0].pause();
+                $(this).css({
+                    background: "green"
+                });
+            });
+            $("#div3").mouseover(function(){
+                $("#gorila")[0].play();
+                $(this).css({
+                    background: "url('https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/2DE0/production/_106544711_e4922507-673a-4f2f-b91d-3479994a870b.jpg')"
+                });
+            });
+            $("#div3").mouseout(function(){
+                $("#gorila")[0].pause();
+                $(this).css({
+                    background: "green"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
