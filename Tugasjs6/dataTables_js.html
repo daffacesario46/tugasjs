@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatables</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.css">
+</head>
+<body>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Jenis</th>
+                <th>Merk</th>
+                <th>Tipe</th>
+                <th>Tahun Pembuatan</th>
+                <th>Harga</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>All New Corvette Stingray</td>
+                <td>Sportcar</td>
+                <td>Chevrolet</td>
+                <td>Corvette Stingray</td>
+                <td>2014</td>
+                <td>$63.000</td>
+            </tr>
+            <tr>
+                <td>Mclaren 570s Spider</td>
+                <td>Sportcar</td>
+                <td>Mercedes-AMG</td>
+                <td>Mclaren 570s Spider</td>
+                <td>2021</td>
+                <td>$186,000</td>
+            </tr>
+            <tr>
+                <td>Bugatti Centodieci</td>
+                <td>Luxury Sportcar</td>
+                <td>Bugatti</td>
+                <td>Bugatti Centodieci</td>
+                <td>2019</td>
+                <td>$8.600.000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Nama</th>
+                <th>Jenis</th>
+                <th>Merk</th>
+                <th>Tipe</th>
+                <th>Tahun Pembuatan</th>
+                <th>Harga</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
+
+    <script>
+        new DataTable('#example',{
+            layout: {
+                topStart:{
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
+    </script>
+</body>
+</html>
